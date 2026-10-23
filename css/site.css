@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+:root {
+  --bg: #080808;
+  --text: #f5f5f5;
+  --muted: #999;
+  --line: #292929;
+  --card: #161616;
+  --radius: 26px;
+  --gap: 14px;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Arial, sans-serif;
+  min-height: 100vh;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.topline {
+  height: 64px;
+  padding: 0 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+.top-role {
+  justify-self: start;
+}
+.top-right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 6vw, 100px);
+}
+.theme-dot {
+  width: 13px;
+  height: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--text);
+  cursor: pointer;
+}
+.home {
+  padding: 0 4px 20px;
+}
+.hero-name {
+  text-align: center;
+  font-size: clamp(55px, 10vw, 145px);
+  line-height: 1;
+  letter-spacing: -0.075em;
+  font-weight: 600;
+  margin: -2px 0 -12px;
+  position: relative;
+  z-index: 1;
+}
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: minmax(230px, 18.2vw) minmax(130px, 10vw) minmax(130px, 10vw);
+  gap: var(--gap);
+}
+.tile {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, #191919, #131313);
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+.tile:hover {
+  border-color: #555;
+  transform: translateY(-2px);
+}
+.tile-label {
+  position: absolute;
+  left: 28px;
+  bottom: 27px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+.arrow {
+  position: absolute;
+  right: 28px;
+  bottom: 25px;
+  font-size: 21px;
+}
+.about-tile {
+  grid-column: 1;
+  grid-row: 1;
+}
+.portfolio-tile {
+  grid-column: 2/5;
+  grid-row: 1;
+}
+.contact-tile {
+  grid-column: 1/3;
+  grid-row: 2;
+}
+.portrait-tile {
+  grid-column: 3;
+  grid-row: 2;
+  align-items: center;
+  justify-content: center;
+  background: #151515;
+}
+.portrait-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: none;
+  opacity: 1;
+}
+.tools-tile {
+  grid-column: 4;
+  grid-row: 2;
+  align-items: center;
+  justify-content: center;
+}
+.tool-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 20px 10px 55px;
+}
+.tool-icon {
+  width: clamp(38px, 4vw, 64px);
+  height: clamp(38px, 4vw, 64px);
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: #222;
+  color: #eee;
+  font-size: clamp(16px, 2vw, 25px);
+  font-weight: 800;
+}
+.tool-icons .ue {
+  color: #86baff;
+}
+.tool-icons .unity {
+  color: #eee;
+}
+.tool-icons .code {
+  color: #f4a1d1;
+}
+.tool-icons .pixel {
+  color: #b8ee85;
+}
+.resume-tile {
+  grid-column: 4;
+  grid-row: 2;
+  display: none;
+}
+.portrait-caption {
+  position: absolute;
+  left: 20px;
+  bottom: 17px;
+  font: 9px monospace;
+  letter-spacing: 1px;
+  color: #ddd;
+}
+.home-note {
+  font: 10px monospace;
+  letter-spacing: 0.7px;
+  color: #777;
+  margin: 18px 8px;
+}
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 22px 12px;
+  color: #777;
+  font: 9px monospace;
+  letter-spacing: 1px;
+}
+.footer span:nth-child(2) {
+  text-align: center;
+}
+.footer a {
+  text-align: right;
+}
+.game-index {
+  width: min(1100px, calc(100% - 32px));
+  margin: 60px auto;
+}
+.eyebrow {
+  font: 10px monospace;
+  letter-spacing: 1.2px;
+  color: #888;
+}
+.game-index h2 {
+  font-size: clamp(38px, 6vw, 70px);
+  letter-spacing: -0.07em;
+  margin: 12px 0 25px;
+}
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.game-card {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--card);
+}
+.game-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+  background: #101010;
+  padding: 18px;
+}
+.game-card-body {
+  padding: 18px;
+}
+.game-card h3 {
+  margin: 0 0 8px;
+  font-size: 19px;
+}
+.game-card p {
+  color: #aaa;
+  line-height: 1.7;
+  font-size: 13px;
+}
+.game-card .card-link {
+  font-size: 11px;
+  border-bottom: 1px solid #777;
+  padding-bottom: 5px;
+}
+.light {
+  --bg: #f0f0ee;
+  --text: #111;
+  --muted: #555;
+  --line: #d1d1cd;
+  --card: #e5e5e2;
+}
+.light .tile {
+  background: linear-gradient(145deg, #e7e7e4, #dededb);
+}
+.light .tool-icon {
+  background: #d0d0cd;
+  color: #111;
+}
+@media (min-width: 1100px) {
+  .contact-tile {
+    grid-row: 2/4;
+  }
+  .portrait-tile {
+    grid-row: 2/4;
+  }
+  .tools-tile {
+    grid-column: 4;
+    grid-row: 2;
+    padding-bottom: 0;
+  }
+  .resume-tile {
+    display: flex;
+    grid-column: 4;
+    grid-row: 3;
+    align-self: stretch;
+    height: auto;
+    z-index: 1;
+    background: #171717;
+  }
+  .tools-tile .tile-label,
+  .tools-tile .arrow {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .topline {
+    height: 58px;
+    grid-template-columns: 1fr auto;
+    font-size: 11px;
+  }
+  .top-role {
+    display: none;
+  }
+  .top-right {
+    gap: 17px;
+  }
+  .hero-name {
+    font-size: clamp(40px, 11vw, 74px);
+    margin: 10px 0 16px;
+    white-space: normal;
+  }
+  .tile-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 180px 180px 180px 120px;
+    gap: 9px;
+  }
+  .about-tile {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .portfolio-tile {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .contact-tile {
+    grid-column: 1/3;
+    grid-row: 2;
+  }
+  .portrait-tile {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .tools-tile {
+    grid-column: 2;
+    grid-row: 3;
+    padding: 0;
+  }
+  .resume-tile {
+    display: flex;
+    grid-column: 1/3;
+    grid-row: 4;
+    min-height: 120px;
+  }
+  .tile-label {
+    left: 15px;
+    bottom: 17px;
+    font-size: 13px;
+  }
+  .arrow {
+    right: 15px;
+    bottom: 14px;
+  }
+  .tool-icons {
+    gap: 6px;
+    padding: 10px 5px 40px;
+  }
+  .tool-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+  }
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+  .game-card img {
+    height: 200px;
+  }
+  .footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .footer span:nth-child(2) {
+    text-align: right;
+  }
+  .footer a {
+    grid-column: 1/3;
+    text-align: left;
+  }
+}
+
+
+/* Consistent link treatment: white text, no underline, across all pages. */
+a, a:link, a:visited, a:hover, a:focus, a:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Ionicons compatibility */
+.arrow ion-icon, .card-link ion-icon, .footer a ion-icon, .resume-open ion-icon { vertical-align: -0.12em; }
+.arrow ion-icon { font-size: 1.15em; }
+.tool-icon ion-icon { display: block; font-size: 1.35em; }

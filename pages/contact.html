@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact — Your Portfolio</title>
+    <link rel="stylesheet" href="../css/content.css" />
+    <script src="../js/site.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </head>
+  <body>
+    <header class="topline">
+      <a href="../index.html">Ayush Roy / DESIGN PORTFOLIO</a>
+      <div>
+        
+      </div>
+    </header>
+    <main class="content">
+      <a class="back" href="../index.html">← BACK HOME</a>
+      <p class="eyebrow">CONTACT / AYUSH ROY</p>
+      <h1>Let's make<br /><span>something amazing.</span></h1>
+      <p class="lead">
+        Interested in a design collaboration, visual project, or creative conversation? Reach out.
+      </p>
+      <div class="columns">
+        <section class="panel">
+          <h2>Email</h2>
+          <p>ayushroy3368@gmail.com</p>
+        </section>
+        <section class="panel">
+          <h2>Socials</h2>
+          <p>
+            Connect with me on Instagram and LinkedIn, or get in touch by email or phone.
+          </p>
+        </section>
+      </div>
+      <div class="links">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ayushroy3368@gmail.com"
+          ><span>EMAIL</span><b>ayushroy3368@gmail.com ↗</b></a
+        ><a href="#" id="copy-phone" role="button" aria-label="Copy phone number 86381-39597"
+          ><span id="phone-action-label">PHONE · CLICK TO COPY</span><b>86381-39597 <ion-icon name="copy-outline" aria-hidden="true"></ion-icon></b></a
+        ><a
+          href="https://www.instagram.com/royroyroy._/"
+          target="_blank"
+          rel="noreferrer"
+          ><span>INSTAGRAM</span><b>@royroyroy._ ↗</b></a
+        ><a
+          href="https://www.linkedin.com/in/ayush-roy-75302a316/?isSelfProfile=false"
+          target="_blank"
+          rel="noreferrer"
+          ><span>LINKEDIN</span><b>Ayush Roy ↗</b></a
+        >
+      </div>
+      <div class="bottom-links">
+        <a href="../index.html">← Back home</a
+        ><a href="contact.html">Get in touch <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon></a>
+      </div>
+    </main>
+    <footer class="footer">
+      <span>AYUSH ROY · DESIGN PORTFOLIO</span
+      ><span>© <span id="year"></span> AYUSH ROY</span>
+    </footer>
+    <script>
+      const phoneLink = document.getElementById('copy-phone');
+      const phoneLabel = document.getElementById('phone-action-label');
+      phoneLink.addEventListener('click', async (event) => {
+        event.preventDefault();
+        const phoneNumber = '86381-39597';
+        try {
+          await navigator.clipboard.writeText(phoneNumber);
+          phoneLabel.textContent = 'COPIED TO CLIPBOARD ✓';
+        } catch (error) {
+          const field = document.createElement('textarea');
+          field.value = phoneNumber;
+          field.setAttribute('readonly', '');
+          field.style.position = 'absolute';
+          field.style.left = '-9999px';
+          document.body.appendChild(field);
+          field.select();
+          const copied = document.execCommand('copy');
+          field.remove();
+          phoneLabel.textContent = copied ? 'COPIED TO CLIPBOARD ✓' : 'COPY PHONE NUMBER';
+        }
+      });
+    </script>
+  </body>
+</html>
