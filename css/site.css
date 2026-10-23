@@ -280,10 +280,6 @@ a {
     z-index: 1;
     background: #171717;
   }
-  .tools-tile .tile-label,
-  .tools-tile .arrow {
-    display: none;
-  }
 }
 @media (max-width: 700px) {
   .topline {
@@ -337,7 +333,7 @@ a {
   .tile-label {
     left: 15px;
     bottom: 17px;
-    font-size: 13px;
+    font-size: 14px;
   }
   .arrow {
     right: 15px;
