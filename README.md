@@ -17,6 +17,7 @@ A static portfolio website for Ayush Roy, Graphic & Communication Design student
 ├── assets/
 │   ├── images/
 │   │   ├── ayush.jpg          # Profile photo
+│   │   ├── thumbnails/        # Homepage About and Resume tile artwork
 │   │   └── placeholders/      # Placeholder logo and project artwork
 │   └── resume/
 │       └── Ayush-Roy-Resume.pdf
