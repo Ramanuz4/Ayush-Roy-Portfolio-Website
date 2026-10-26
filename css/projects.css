@@ -185,6 +185,25 @@ a {
   background: #000;
   image-rendering: pixelated;
 }
+.screenshots.lease-app-gallery img {
+  height: auto;
+  object-fit: contain;
+  background: #fff;
+}
+.lease-app-preview iframe {
+  display: block;
+  width: 100%;
+  height: min(780px, 85vh);
+  min-height: 520px;
+  border: 1px solid #292929;
+  border-radius: 12px;
+  background: #fff;
+}
+.lease-app-link {
+  color: #c6f277;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .storybook {
   position: relative;
   left: 50%;
