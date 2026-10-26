@@ -143,6 +143,48 @@ a {
   box-shadow: 0 20px 44px rgba(0, 0, 0, 0.18);
   display: block;
 }
+.screenshots.prime-gallery img,
+.screenshots.poster-gallery img {
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: #131313;
+}
+.screenshots.campaign-gallery {
+  align-items: start;
+}
+.screenshots.campaign-gallery img {
+  height: auto;
+  object-fit: contain;
+  background: #131313;
+}
+.screenshots.package-gallery {
+  align-items: start;
+}
+.screenshots.package-gallery img {
+  height: auto;
+  object-fit: contain;
+  background: #fff;
+}
+.screenshots.package-gallery img[src*="cyra-butter-paper-print"] {
+  aspect-ratio: 3 / 4;
+}
+.project-video {
+  display: block;
+  width: min(100%, 900px);
+  max-height: 75vh;
+  margin: 0 0 28px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 1px solid #292929;
+  border-radius: 18px;
+}
+.screenshots.character-gallery img {
+  height: clamp(220px, 28vw, 360px);
+  object-fit: contain;
+  background: #000;
+  image-rendering: pixelated;
+}
 .storybook {
   position: relative;
   left: 50%;
